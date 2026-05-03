@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>系统设计笔记 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="系统设计笔记：从单体到分布式的思维转变 · 思维碎片" />
+  <meta property="og:description" content="系统设计不只是技术问题，更是权衡的艺术。CAP 定理告诉我们，世界上没有免费的午餐。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/posts/system-design.html" />
+  <meta name="description" content="系统设计不只是技术问题，更是权衡的艺术。CAP 定理告诉我们，世界上没有免费的午餐。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="../index.html">全部</a>
+        <a href="../tech.html" class="active">技术</a>
+        <a href="../cognition.html">认知</a>
+        <a href="../photography.html">摄影</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <a href="../index.html" class="back-link">← 返回</a>
+    <div class="article-header">
+      <div class="post-meta">
+        <span class="tag tech">技术</span>
+        <time>2024 · 12 · 02</time>
+      </div>
+      <h1>系统设计笔记：从单体到分布式的思维转变</h1>
+    </div>
+    <div class="article-content">
+      <p>系统设计不只是技术问题，更是权衡的艺术。CAP 定理告诉我们，世界上没有免费的午餐——一致性、可用性、分区容错性，最多只能同时保证两个。</p>
+      <h2>为什么单体不够</h2>
+      <p>单体架构在早期是最优解：简单、易于理解、调试方便。问题出现在规模增长之后：部署风险高（一个模块改动影响全部）、扩展困难（只能整体扩展）、技术债累积（难以局部重构）。</p>
+      <h2>分布式的代价</h2>
+      <p>微服务解决了上述问题，但引入了新的复杂性：网络延迟、服务发现、分布式事务、最终一致性……</p>
+      <blockquote>分布式系统的本质困难：网络是不可靠的，而我们必须在这个前提下构建可靠的系统。</blockquote>
+      <p>这种思维转变让我开始以不同的方式思考问题：<strong>假设失败</strong>，而不是假设成功。每一个服务调用，都可能超时、失败、返回错误数据。好的系统设计，是优雅地处理这些失败。</p>
+      <h2>一个实用原则</h2>
+      <p>在设计系统时，我现在会问：「如果这个组件在凌晨三点崩溃了，会发生什么？」这个问题迫使你提前考虑容错、降级和恢复策略，而不是在事故发生后亡羊补牢。</p>
+    </div>
+
+    <div class="comments-section">
+      <h3>评论</h3>
+      <div id="giscus-container">
+        <div id="giscus-fallback" style="text-align:center;padding:32px 0;">
+          <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载中…</p>
+        </div>
+      </div>
+      <script>
+        (function() {
+          var theme = localStorage.getItem('theme') === 'dark' ? 'dark_dimmed' : 'light';
+          var s = document.createElement('script');
+          s.src = 'https://giscus.app/client.js';
+          s.dataset.repo = 'itx-man/siweisuipian';
+          s.dataset.repoId = 'R_kgDOSTIv8g';
+          s.dataset.category = 'General';
+          s.dataset.categoryId = 'DIC_kwDOSTIv8s4C8P6P';
+          s.dataset.mapping = 'pathname';
+          s.dataset.strict = '0';
+          s.dataset.reactionsEnabled = '1';
+          s.dataset.emitMetadata = '0';
+          s.dataset.inputPosition = 'top';
+          s.dataset.theme = theme;
+          s.dataset.lang = 'zh-CN';
+          s.crossOrigin = 'anonymous';
+          s.async = false;
+          s.onload = function() {
+            var fb = document.getElementById('giscus-fallback');
+            if (fb) fb.style.display = 'none';
+          };
+          s.onerror = function() {
+            document.getElementById('giscus-fallback').innerHTML =
+              '<p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载失败，请确认已安装 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>Giscus App</a> 并开启仓库 Discussions 功能</p>';
+          };
+          document.getElementById('giscus-container').appendChild(s);
+          // 5秒后仍未出现 iframe 则显示安装提示
+          setTimeout(function() {
+            if (!document.querySelector('iframe.giscus-frame')) {
+              document.getElementById('giscus-fallback').innerHTML =
+                '<div style="border:1px dashed var(--border);border-radius:4px;padding:24px 28px;text-align:center">' +
+                '<p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-2);margin-bottom:12px">需完成以下步骤激活评论：</p>' +
+                '<p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-3);line-height:2">' +
+                '① 访问 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>github.com/apps/giscus</a> 安装 App 到 itx-man/siweisuipian<br>' +
+                '② 进入仓库 Settings → Features → 勾选 Discussions<br>' +
+                '③ 刷新页面即可</p></div>';
+              document.getElementById('giscus-fallback').style.display = 'block';
+            }
+          }, 5000);
+        })();
+      </script>
+    </div>
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="../index.html">全部</a>
+      <a href="../tech.html">技术</a>
+      <a href="../cognition.html">认知</a>
+      <a href="../photography.html">摄影</a>
+      <a href="../about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p class="footer-sub">© 2025 思维碎片</p>
+  </footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/toc.js"></script>
+
+  <script>
+    // 主题切换时同步 Giscus
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      setTimeout(function() {
+        var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark_dimmed' : 'light';
+        var iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+          iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: theme } } },
+            'https://giscus.app'
+          );
+        }
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>

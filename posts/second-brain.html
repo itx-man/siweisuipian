@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>建立第二大脑 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="建立第二大脑：知识管理的个人实践 · 思维碎片" />
+  <meta property="og:description" content="为了输出而记录，不是为了存档。两年摸索出的知识管理方法。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/posts/second-brain.html" />
+  <meta name="description" content="为了输出而记录，不是为了存档。两年摸索出的知识管理方法。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="../index.html">全部</a>
+        <a href="../tech.html">技术</a>
+        <a href="../cognition.html" class="active">认知</a>
+        <a href="../photography.html">摄影</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <a href="../index.html" class="back-link">← 返回</a>
+    <div class="article-header">
+      <div class="post-meta">
+        <span class="tag cognition">认知</span>
+        <time>2024 · 11 · 20</time>
+      </div>
+      <h1>建立第二大脑：知识管理的个人实践</h1>
+    </div>
+    <div class="article-content">
+      <p>信息过载的时代，如何不让知识只是流过，而是真正沉淀下来？我用了两年摸索出一套自己的方法，核心只有一句话：<strong>为了输出而记录，不是为了存档。</strong></p>
+      <h2>绝大多数笔记都是死的</h2>
+      <p>我曾经用 Notion 建立了一个庞大的知识库，有分类、有标签、有封面图。很漂亮，也很没用——因为我从不去翻它。</p>
+      <p>问题在于，我记录的目的是「以防将来用得上」，而不是「为了理解和应用」。这种笔记是信息的搬运，不是知识的内化。</p>
+      <h2>渐进式总结</h2>
+      <p>后来我采用了 Tiago Forte 的「渐进式总结」方法：每次阅读时只高亮真正触动我的句子，而不是「所有重要信息」。然后在第二次回顾时，从已有的高亮中再筛选出精华。</p>
+      <p>这个方法迫使你做出选择，而选择本身就是思考。</p>
+      <h2>输出倒逼输入</h2>
+      <blockquote>如果你不打算写出来，就不要记下来。</blockquote>
+      <p>这条规则改变了我的阅读方式。我开始带着「我要如何用这个观点写一篇文章」的视角阅读，而不是被动地消费内容。这让每次阅读的密度大幅提升，记录的内容也变得更有价值。</p>
+      <p>这个博客本身，就是我第二大脑的一部分输出。写作不是知识管理的终点，而是它的起点。</p>
+    </div>
+
+    <div class="comments-section">
+      <h3>评论</h3>
+      <div id="giscus-container">
+        <div id="giscus-fallback" style="text-align:center;padding:32px 0;">
+          <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载中…</p>
+        </div>
+      </div>
+      <script>
+        (function() {
+          var theme = localStorage.getItem('theme') === 'dark' ? 'dark_dimmed' : 'light';
+          var s = document.createElement('script');
+          s.src = 'https://giscus.app/client.js';
+          s.dataset.repo = 'itx-man/siweisuipian';
+          s.dataset.repoId = 'R_kgDOSTIv8g';
+          s.dataset.category = 'General';
+          s.dataset.categoryId = 'DIC_kwDOSTIv8s4C8P6P';
+          s.dataset.mapping = 'pathname';
+          s.dataset.strict = '0';
+          s.dataset.reactionsEnabled = '1';
+          s.dataset.emitMetadata = '0';
+          s.dataset.inputPosition = 'top';
+          s.dataset.theme = theme;
+          s.dataset.lang = 'zh-CN';
+          s.crossOrigin = 'anonymous';
+          s.async = false;
+          s.onload = function() {
+            var fb = document.getElementById('giscus-fallback');
+            if (fb) fb.style.display = 'none';
+          };
+          s.onerror = function() {
+            document.getElementById('giscus-fallback').innerHTML =
+              '<p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载失败，请确认已安装 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>Giscus App</a> 并开启仓库 Discussions 功能</p>';
+          };
+          document.getElementById('giscus-container').appendChild(s);
+          // 5秒后仍未出现 iframe 则显示安装提示
+          setTimeout(function() {
+            if (!document.querySelector('iframe.giscus-frame')) {
+              document.getElementById('giscus-fallback').innerHTML =
+                '<div style="border:1px dashed var(--border);border-radius:4px;padding:24px 28px;text-align:center">' +
+                '<p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-2);margin-bottom:12px">需完成以下步骤激活评论：</p>' +
+                '<p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-3);line-height:2">' +
+                '① 访问 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>github.com/apps/giscus</a> 安装 App 到 itx-man/siweisuipian<br>' +
+                '② 进入仓库 Settings → Features → 勾选 Discussions<br>' +
+                '③ 刷新页面即可</p></div>';
+              document.getElementById('giscus-fallback').style.display = 'block';
+            }
+          }, 5000);
+        })();
+      </script>
+    </div>
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="../index.html">全部</a>
+      <a href="../tech.html">技术</a>
+      <a href="../cognition.html">认知</a>
+      <a href="../photography.html">摄影</a>
+      <a href="../about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p class="footer-sub">© 2025 思维碎片</p>
+  </footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/toc.js"></script>
+
+  <script>
+    // 主题切换时同步 Giscus
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      setTimeout(function() {
+        var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark_dimmed' : 'light';
+        var iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+          iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: theme } } },
+            'https://giscus.app'
+          );
+        }
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# sed 临时文件（沙箱遗留）
+posts/sed*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node（如将来引入构建工具）
+node_modules/
+dist/
+.env
+.env.local

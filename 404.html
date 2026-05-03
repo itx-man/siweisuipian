@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>页面不存在 · 思维碎片</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    .not-found {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      gap: 16px;
+    }
+    .not-found .code {
+      font-family: var(--font-mono);
+      font-size: 5rem;
+      font-weight: 300;
+      color: var(--border);
+      line-height: 1;
+    }
+    .not-found h1 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .not-found p {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-3);
+    }
+    .not-found a {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 8px;
+      letter-spacing: 0.03em;
+    }
+    .not-found a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="index.html">全部</a>
+        <a href="tech.html">技术</a>
+        <a href="cognition.html">认知</a>
+        <a href="photography.html">摄影</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <div class="not-found">
+      <div class="code">404</div>
+      <h1>这个页面不存在</h1>
+      <p>它可能被移动、删除，或者从未存在过</p>
+      <a href="index.html">← 返回首页</a>
+    </div>
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="index.html">全部</a>
+      <a href="tech.html">技术</a>
+      <a href="cognition.html">认知</a>
+      <a href="photography.html">摄影</a>
+      <a href="about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p>© 2025 思维碎片</p>
+  </footer>
+  <script src="js/theme.js"></script>
+  <script src="js/utils.js"></script>
+</body>
+</html>

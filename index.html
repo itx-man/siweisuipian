@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>思维碎片 · 技术与认知</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="思维碎片 · 技术与认知" />
+  <meta property="og:description" content="记录技术学习与认知提升的个人博客，涵盖系统设计、Rust、LLM、心智模型、深度工作等主题。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/" />
+  <meta name="description" content="记录技术学习与认知提升的个人博客，涵盖系统设计、Rust、LLM、心智模型、深度工作等主题。" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">全部</a>
+        <a href="tech.html">技术</a>
+        <a href="cognition.html">认知</a>
+        <a href="photography.html">摄影</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <span class="sun">☀</span><span class="moon">◑</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="hero-sub">记录技术成长与认知跃迁</p>
+      <h1>每一个想法<br/>都值得被记录</h1>
+    </section>
+
+    <section class="posts">
+      <article class="post-card" onclick="location.href='posts/llm-thinking.html'">
+        <div class="post-meta">
+          <span class="tag tech">技术</span>
+          <time>2025 · 01 · 18</time>
+        </div>
+        <h2>大模型时代，如何高效学习新技术</h2>
+        <p>在 LLM 触手可及的今天，学习新技术的范式已悄然转变。我们不再需要死记 API，而是学会提问的艺术……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+
+      <article class="post-card" onclick="location.href='posts/mental-models.html'">
+        <div class="post-meta">
+          <span class="tag cognition">认知</span>
+          <time>2025 · 01 · 10</time>
+        </div>
+        <h2>心智模型：用第一性原理重构认知框架</h2>
+        <p>查理·芒格说，拥有多个心智模型，是避免"拿着锤子看什么都是钉子"的唯一方式……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+
+      <article class="post-card" onclick="location.href='posts/rust-ownership.html'">
+        <div class="post-meta">
+          <span class="tag tech">技术</span>
+          <time>2024 · 12 · 28</time>
+        </div>
+        <h2>Rust 所有权系统：从混乱到顿悟</h2>
+        <p>学 Rust 三周，终于在某个深夜，突然理解了为什么借用检查器会拒绝那段代码。那一刻，脑海里某块拼图落定……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+
+      <article class="post-card" onclick="location.href='posts/deep-work.html'">
+        <div class="post-meta">
+          <span class="tag cognition">认知</span>
+          <time>2024 · 12 · 15</time>
+        </div>
+        <h2>深度工作实践手记：六个月的实验报告</h2>
+        <p>Cal Newport 的《深度工作》改变了我的工作方式。六个月后，我想诚实地分享什么真的有效，什么只是自我欺骗……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+
+      <article class="post-card" onclick="location.href='posts/system-design.html'">
+        <div class="post-meta">
+          <span class="tag tech">技术</span>
+          <time>2024 · 12 · 02</time>
+        </div>
+        <h2>系统设计笔记：从单体到分布式的思维转变</h2>
+        <p>系统设计不只是技术问题，更是权衡的艺术。CAP 定理告诉我们，世界上没有免费的午餐……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+
+      <article class="post-card" onclick="location.href='posts/second-brain.html'">
+        <div class="post-meta">
+          <span class="tag cognition">认知</span>
+          <time>2024 · 11 · 20</time>
+        </div>
+        <h2>建立第二大脑：知识管理的个人实践</h2>
+        <p>信息过载的时代，如何不让知识只是流过，而是真正沉淀下来？我用了两年摸索出一套自己的方法……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <a href="index.html">全部</a>
+      <a href="tech.html">技术</a>
+      <a href="cognition.html">认知</a>
+      <a href="photography.html">摄影</a>
+      <a href="about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p class="footer-sub">© 2025 思维碎片</p>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    var cards = document.querySelectorAll('.post-card');
+    cards.forEach(function(card, i) {
+      setTimeout(function() {
+        card.classList.add('entered');
+      }, 80 + i * 90);
+    });
+  </script>
+</body>
+</html>

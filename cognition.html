@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>认知 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="认知 · 思维碎片" />
+  <meta property="og:description" content="思维、决策与心智成长——用写作澄清模糊的想法。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/cognition.html" />
+  <meta name="description" content="思维、决策与心智成长——用写作澄清模糊的想法。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="index.html">全部</a>
+        <a href="tech.html">技术</a>
+        <a href="cognition.html" class="active">认知</a>
+        <a href="photography.html">摄影</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="hero-sub">认知提升</p>
+      <h1>思维、决策<br/>与心智成长</h1>
+    </section>
+    <section class="posts">
+      <article class="post-card" onclick="location.href='posts/mental-models.html'">
+        <div class="post-meta"><span class="tag cognition">认知</span><time>2025 · 01 · 10</time></div>
+        <h2>心智模型：用第一性原理重构认知框架</h2>
+        <p>查理·芒格说，拥有多个心智模型，是避免「拿着锤子看什么都是钉子」的唯一方式……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+      <article class="post-card" onclick="location.href='posts/deep-work.html'">
+        <div class="post-meta"><span class="tag cognition">认知</span><time>2024 · 12 · 15</time></div>
+        <h2>深度工作实践手记：六个月的实验报告</h2>
+        <p>Cal Newport 的《深度工作》改变了我的工作方式……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+      <article class="post-card" onclick="location.href='posts/second-brain.html'">
+        <div class="post-meta"><span class="tag cognition">认知</span><time>2024 · 11 · 20</time></div>
+        <h2>建立第二大脑：知识管理的个人实践</h2>
+        <p>信息过载的时代，如何不让知识只是流过，而是真正沉淀下来……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+    </section>
+  </main>
+  <footer><p>以文字为锚 · 用思考导航</p><p class="footer-sub">© 2025 思维碎片</p></footer>
+  <script src="js/theme.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    var cards = document.querySelectorAll('.post-card');
+    cards.forEach(function(card, i) {
+      setTimeout(function() {
+        card.classList.add('entered');
+      }, 80 + i * 90);
+    });
+  </script>
+</body>
+</html>

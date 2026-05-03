@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>摄影 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="摄影 · 思维碎片" />
+  <meta property="og:description" content="用光影记录对世界的凝视——摄影审美与构图心得。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/photography.html" />
+  <meta name="description" content="用光影记录对世界的凝视——摄影审美与构图心得。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="index.html">全部</a>
+        <a href="tech.html">技术</a>
+        <a href="cognition.html">认知</a>
+        <a href="photography.html" class="active">摄影</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="hero-sub">摄影 · 审美</p>
+      <h1>用光影记录<br/>对世界的凝视</h1>
+    </section>
+    <section class="posts">
+      <article class="post-card" onclick="location.href='posts/seeing-light.html'">
+        <div class="post-meta">
+          <span class="tag photo">摄影</span>
+          <time>2025 · 02 · 08</time>
+        </div>
+        <h2>学会「看」光：摄影审美的第一课</h2>
+        <p>摄影是一门关于光的艺术。在我真正理解这句话之前，我花了将近一年时间按快门，却始终不知道自己在拍什么……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+      <article class="post-card" onclick="location.href='posts/composition-notes.html'">
+        <div class="post-meta">
+          <span class="tag photo">摄影</span>
+          <time>2025 · 01 · 25</time>
+        </div>
+        <h2>构图笔记：从「记录」到「表达」</h2>
+        <p>三分法只是起点。当你开始思考「为什么把主体放在这里」而不是「应该放在哪里」，构图才真正开始变得有趣……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="index.html">全部</a>
+      <a href="tech.html">技术</a>
+      <a href="cognition.html">认知</a>
+      <a href="photography.html">摄影</a>
+      <a href="about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p class="footer-sub">© 2025 思维碎片</p>
+  </footer>
+  <script src="js/theme.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    var cards = document.querySelectorAll('.post-card');
+    cards.forEach(function(card, i) {
+      setTimeout(function() { card.classList.add('entered'); }, 80 + i * 90);
+    });
+  </script>
+</body>
+</html>

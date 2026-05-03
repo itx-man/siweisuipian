@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>心智模型：用第一性原理重构认知框架 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="心智模型：用第一性原理重构认知框架 · 思维碎片" />
+  <meta property="og:description" content="查理·芒格说，拥有多个心智模型，是避免「拿着锤子看什么都是钉子」的唯一方式。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/posts/mental-models.html" />
+  <meta name="description" content="查理·芒格说，拥有多个心智模型，是避免「拿着锤子看什么都是钉子」的唯一方式。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="../index.html">全部</a>
+        <a href="../tech.html">技术</a>
+        <a href="../cognition.html" class="active">认知</a>
+        <a href="../photography.html">摄影</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <a href="../index.html" class="back-link">← 返回</a>
+    <div class="article-header">
+      <div class="post-meta">
+        <span class="tag cognition">认知</span>
+        <time>2025 · 01 · 10</time>
+      </div>
+      <h1>心智模型：用第一性原理重构认知框架</h1>
+    </div>
+    <div class="article-content">
+      <p>查理·芒格说，拥有多个心智模型，是避免「拿着锤子看什么都是钉子」的唯一方式。但什么是心智模型？我们又如何真正地习得它？</p>
+
+      <h2>类比的局限</h2>
+      <p>大多数人的思考都依赖类比：「这件事就像……」这是认知的捷径，高效但脆弱。当我们面对真正新颖的问题时，找不到合适的类比，就会陷入思维僵局。</p>
+      <p>第一性原理则要求你从基础事实出发，问「这件事最本质的约束是什么」，而不是「别人是怎么做的」。</p>
+
+      <h2>一个具体的例子</h2>
+      <p>我曾经思考过一个问题：为什么学习编程很难？</p>
+      <p>类比思维的答案：「就像学外语一样，需要大量练习。」这个答案有一定帮助，但没有指向任何具体的行动。</p>
+      <p>第一性原理的答案需要我去拆解：编程难，是因为需要同时维护多个抽象层级（物理硬件→操作系统→运行时→代码逻辑→业务语义），而人类大脑的工作记忆是极其有限的。</p>
+      <blockquote>真正的困难不是记忆语法，而是在认知负荷下维持多层抽象的一致性。</blockquote>
+      <p>这个洞察直接指向了解决方案：减少认知负荷（IDE、静态类型、好的命名），以及刻意扩展工作记忆（大量练习直到低层细节自动化）。</p>
+
+      <h2>如何建立自己的模型库</h2>
+      <p>心智模型不是背来的，是用出来的。我的建议：</p>
+      <p><strong>选择跨学科的经典模型。</strong>二阶效应、激励机制、系统思维、贝叶斯更新……这些来自不同领域的模型，往往能照亮你意想不到的角落。</p>
+      <p><strong>用写作来检验理解。</strong>你能把一个模型用自己的话写清楚，才算真的懂了。这篇文章本身就是我检验「第一性原理」这个模型的尝试。</p>
+      <p><strong>在决策时刻意调用。</strong>下次面对重要决策，停下来问：我现在用的是哪个心智模型？它合适吗？有没有被忽视的视角？</p>
+    </div>
+
+    <div class="comments-section">
+      <h3>评论</h3>
+      <div id="giscus-container">
+        <div id="giscus-fallback" style="text-align:center;padding:32px 0;">
+          <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载中…</p>
+        </div>
+      </div>
+      <script>
+        (function() {
+          var theme = localStorage.getItem('theme') === 'dark' ? 'dark_dimmed' : 'light';
+          var s = document.createElement('script');
+          s.src = 'https://giscus.app/client.js';
+          s.dataset.repo = 'itx-man/siweisuipian';
+          s.dataset.repoId = 'R_kgDOSTIv8g';
+          s.dataset.category = 'General';
+          s.dataset.categoryId = 'DIC_kwDOSTIv8s4C8P6P';
+          s.dataset.mapping = 'pathname';
+          s.dataset.strict = '0';
+          s.dataset.reactionsEnabled = '1';
+          s.dataset.emitMetadata = '0';
+          s.dataset.inputPosition = 'top';
+          s.dataset.theme = theme;
+          s.dataset.lang = 'zh-CN';
+          s.crossOrigin = 'anonymous';
+          s.async = false;
+          s.onload = function() {
+            var fb = document.getElementById('giscus-fallback');
+            if (fb) fb.style.display = 'none';
+          };
+          s.onerror = function() {
+            document.getElementById('giscus-fallback').innerHTML =
+              '<p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载失败，请确认已安装 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>Giscus App</a> 并开启仓库 Discussions 功能</p>';
+          };
+          document.getElementById('giscus-container').appendChild(s);
+          // 5秒后仍未出现 iframe 则显示安装提示
+          setTimeout(function() {
+            if (!document.querySelector('iframe.giscus-frame')) {
+              document.getElementById('giscus-fallback').innerHTML =
+                '<div style="border:1px dashed var(--border);border-radius:4px;padding:24px 28px;text-align:center">' +
+                '<p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-2);margin-bottom:12px">需完成以下步骤激活评论：</p>' +
+                '<p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-3);line-height:2">' +
+                '① 访问 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>github.com/apps/giscus</a> 安装 App 到 itx-man/siweisuipian<br>' +
+                '② 进入仓库 Settings → Features → 勾选 Discussions<br>' +
+                '③ 刷新页面即可</p></div>';
+              document.getElementById('giscus-fallback').style.display = 'block';
+            }
+          }, 5000);
+        })();
+      </script>
+    </div>
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="../index.html">全部</a>
+      <a href="../tech.html">技术</a>
+      <a href="../cognition.html">认知</a>
+      <a href="../photography.html">摄影</a>
+      <a href="../about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p class="footer-sub">© 2025 思维碎片</p>
+  </footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/toc.js"></script>
+
+  <script>
+    // 主题切换时同步 Giscus
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      setTimeout(function() {
+        var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark_dimmed' : 'light';
+        var iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+          iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: theme } } },
+            'https://giscus.app'
+          );
+        }
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>

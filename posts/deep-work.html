@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>深度工作实践手记 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="深度工作实践手记：六个月的实验报告 · 思维碎片" />
+  <meta property="og:description" content="Cal Newport 的《深度工作》改变了我的工作方式。六个月后，诚实地分享什么真的有效，什么只是自我欺骗。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/posts/deep-work.html" />
+  <meta name="description" content="Cal Newport 的《深度工作》改变了我的工作方式。六个月后，诚实地分享什么真的有效，什么只是自我欺骗。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="../index.html">全部</a>
+        <a href="../tech.html">技术</a>
+        <a href="../cognition.html" class="active">认知</a>
+        <a href="../photography.html">摄影</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <a href="../index.html" class="back-link">← 返回</a>
+    <div class="article-header">
+      <div class="post-meta">
+        <span class="tag cognition">认知</span>
+        <time>2024 · 12 · 15</time>
+      </div>
+      <h1>深度工作实践手记：六个月的实验报告</h1>
+    </div>
+    <div class="article-content">
+      <p>Cal Newport 的《深度工作》改变了我的工作方式。六个月后，我想诚实地分享什么真的有效，什么只是自我欺骗。</p>
+      <h2>什么有效</h2>
+      <p><strong>固定时间段。</strong>每天上午 9-12 点，关闭所有通知，只做一件事。坚持了两个月后，这个时段的进入状态速度明显变快——大概需要 5 分钟而不是之前的 30 分钟。</p>
+      <p><strong>结束仪式。</strong>Newport 提到的「shutdown complete」真的有用。每天固定时间做一次任务回顾，然后对自己说「今天结束了」，之后就不再想工作的事。焦虑感减少了很多。</p>
+      <h2>什么是自我欺骗</h2>
+      <p><strong>「我在深度工作」。</strong>有时候我盯着代码编辑器坐了三个小时，实际上只是在低效地「想」，没有真正地「做」。深度工作的关键是产出，不是时长。</p>
+      <p><strong>屏蔽工具。</strong>我买了好几个专注 App，结果只是花时间配置它们。最有效的干预其实是把手机放到另一个房间。</p>
+      <h2>一个核心洞察</h2>
+      <blockquote>深度工作不是关于意志力，而是关于环境设计。与其依靠自律来抵抗分心，不如把分心的选项从物理上移除。</blockquote>
+      <p>六个月最大的收获，是我开始把「注意力」当作一种稀缺资源来管理——就像时间和金钱一样。</p>
+    </div>
+
+    <div class="comments-section">
+      <h3>评论</h3>
+      <div id="giscus-container">
+        <div id="giscus-fallback" style="text-align:center;padding:32px 0;">
+          <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载中…</p>
+        </div>
+      </div>
+      <script>
+        (function() {
+          var theme = localStorage.getItem('theme') === 'dark' ? 'dark_dimmed' : 'light';
+          var s = document.createElement('script');
+          s.src = 'https://giscus.app/client.js';
+          s.dataset.repo = 'itx-man/siweisuipian';
+          s.dataset.repoId = 'R_kgDOSTIv8g';
+          s.dataset.category = 'General';
+          s.dataset.categoryId = 'DIC_kwDOSTIv8s4C8P6P';
+          s.dataset.mapping = 'pathname';
+          s.dataset.strict = '0';
+          s.dataset.reactionsEnabled = '1';
+          s.dataset.emitMetadata = '0';
+          s.dataset.inputPosition = 'top';
+          s.dataset.theme = theme;
+          s.dataset.lang = 'zh-CN';
+          s.crossOrigin = 'anonymous';
+          s.async = false;
+          s.onload = function() {
+            var fb = document.getElementById('giscus-fallback');
+            if (fb) fb.style.display = 'none';
+          };
+          s.onerror = function() {
+            document.getElementById('giscus-fallback').innerHTML =
+              '<p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载失败，请确认已安装 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>Giscus App</a> 并开启仓库 Discussions 功能</p>';
+          };
+          document.getElementById('giscus-container').appendChild(s);
+          // 5秒后仍未出现 iframe 则显示安装提示
+          setTimeout(function() {
+            if (!document.querySelector('iframe.giscus-frame')) {
+              document.getElementById('giscus-fallback').innerHTML =
+                '<div style="border:1px dashed var(--border);border-radius:4px;padding:24px 28px;text-align:center">' +
+                '<p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-2);margin-bottom:12px">需完成以下步骤激活评论：</p>' +
+                '<p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-3);line-height:2">' +
+                '① 访问 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>github.com/apps/giscus</a> 安装 App 到 itx-man/siweisuipian<br>' +
+                '② 进入仓库 Settings → Features → 勾选 Discussions<br>' +
+                '③ 刷新页面即可</p></div>';
+              document.getElementById('giscus-fallback').style.display = 'block';
+            }
+          }, 5000);
+        })();
+      </script>
+    </div>
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="../index.html">全部</a>
+      <a href="../tech.html">技术</a>
+      <a href="../cognition.html">认知</a>
+      <a href="../photography.html">摄影</a>
+      <a href="../about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p class="footer-sub">© 2025 思维碎片</p>
+  </footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/toc.js"></script>
+
+  <script>
+    // 主题切换时同步 Giscus
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      setTimeout(function() {
+        var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark_dimmed' : 'light';
+        var iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+          iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: theme } } },
+            'https://giscus.app'
+          );
+        }
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>大模型时代，如何高效学习新技术 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="大模型时代，如何高效学习新技术 · 思维碎片" />
+  <meta property="og:description" content="在 LLM 触手可及的今天，学习新技术的范式已悄然转变。用精准的问题换取深刻的解释——提问即是学习。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/posts/llm-thinking.html" />
+  <meta name="description" content="在 LLM 触手可及的今天，学习新技术的范式已悄然转变。用精准的问题换取深刻的解释——提问即是学习。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="../index.html">全部</a>
+        <a href="../tech.html" class="active">技术</a>
+        <a href="../cognition.html">认知</a>
+        <a href="../photography.html">摄影</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <a href="../index.html" class="back-link">← 返回</a>
+    <div class="article-header">
+      <div class="post-meta">
+        <span class="tag tech">技术</span>
+        <time>2025 · 01 · 18</time>
+      </div>
+      <h1>大模型时代，如何高效学习新技术</h1>
+    </div>
+    <div class="article-content">
+      <p>在 LLM 触手可及的今天，学习新技术的范式已悄然转变。我们不再需要死记 API 文档，而是学会提问的艺术——用精准的问题换取深刻的解释。</p>
+
+      <h2>旧范式的崩塌</h2>
+      <p>过去的技术学习路径几乎是固定的：找一本书、刷教程、做练习、踩坑、爬出来。这套方法有效，但效率极低。大量时间花在了「查」上——查文档、查 Stack Overflow、查 GitHub Issues。</p>
+      <p>现在，这个「查」的环节已经被大幅压缩。但这也带来了一个新的问题：我们开始不求甚解了。</p>
+
+      <h2>提问即是学习</h2>
+      <p>我发现，真正让 AI 成为有效学习工具的，是把它当作一个<em>苏格拉底式对话伙伴</em>，而不是答案机器。</p>
+      <blockquote>「给我解释一下 Rust 的生命周期」不如「用一个具体的例子，解释为什么编译器拒绝了这段代码，以及它在保护我免受什么问题」</blockquote>
+      <p>后者迫使你在提问之前先思考，同时也让 AI 的回答更有针对性、更容易内化。</p>
+
+      <h2>我的三层学习法</h2>
+      <p><strong>第一层：快速建立直觉。</strong>用 AI 快速扫描新技术的核心概念，建立初步的心智模型。这一阶段允许模糊，目标是能「感觉到」这个技术在解决什么问题。</p>
+      <p><strong>第二层：动手验证假设。</strong>带着疑问去写代码，让错误暴露理解中的漏洞。这一阶段 AI 充当即时的调试伙伴。</p>
+      <p><strong>第三层：向他人解释。</strong>写博客、做分享，或者直接对着 AI 复述你的理解，让它指出错误。费曼技巧在 AI 时代获得了新的载体。</p>
+
+      <h2>警惕的陷阱</h2>
+      <p>大模型最危险的地方，是它总能给出一个「听起来正确」的答案。这会让我们产生一种虚假的理解感。</p>
+      <p>解药是：<strong>坚持写代码</strong>。代码会以最直接的方式告诉你，你到底懂没懂。</p>
+
+      <pre><code># 这段代码能跑，但你真的理解为什么吗？
+def memoize(func):
+    cache = {}
+    def wrapper(*args):
+        if args not in cache:
+            cache[args] = func(*args)
+        return cache[args]
+    return wrapper</code></pre>
+
+      <p>如果你能不借助 AI，清晰地解释这段代码中闭包的工作原理、为什么 <code>cache</code> 不会被垃圾回收——那你才真的懂了。</p>
+    </div>
+
+    <div class="comments-section">
+      <h3>评论</h3>
+      <div id="giscus-container">
+        <div id="giscus-fallback" style="text-align:center;padding:32px 0;">
+          <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载中…</p>
+        </div>
+      </div>
+      <script>
+        (function() {
+          var theme = localStorage.getItem('theme') === 'dark' ? 'dark_dimmed' : 'light';
+          var s = document.createElement('script');
+          s.src = 'https://giscus.app/client.js';
+          s.dataset.repo = 'itx-man/siweisuipian';
+          s.dataset.repoId = 'R_kgDOSTIv8g';
+          s.dataset.category = 'General';
+          s.dataset.categoryId = 'DIC_kwDOSTIv8s4C8P6P';
+          s.dataset.mapping = 'pathname';
+          s.dataset.strict = '0';
+          s.dataset.reactionsEnabled = '1';
+          s.dataset.emitMetadata = '0';
+          s.dataset.inputPosition = 'top';
+          s.dataset.theme = theme;
+          s.dataset.lang = 'zh-CN';
+          s.crossOrigin = 'anonymous';
+          s.async = false;
+          s.onload = function() {
+            var fb = document.getElementById('giscus-fallback');
+            if (fb) fb.style.display = 'none';
+          };
+          s.onerror = function() {
+            document.getElementById('giscus-fallback').innerHTML =
+              '<p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载失败，请确认已安装 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>Giscus App</a> 并开启仓库 Discussions 功能</p>';
+          };
+          document.getElementById('giscus-container').appendChild(s);
+          // 5秒后仍未出现 iframe 则显示安装提示
+          setTimeout(function() {
+            if (!document.querySelector('iframe.giscus-frame')) {
+              document.getElementById('giscus-fallback').innerHTML =
+                '<div style="border:1px dashed var(--border);border-radius:4px;padding:24px 28px;text-align:center">' +
+                '<p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-2);margin-bottom:12px">需完成以下步骤激活评论：</p>' +
+                '<p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-3);line-height:2">' +
+                '① 访问 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>github.com/apps/giscus</a> 安装 App 到 itx-man/siweisuipian<br>' +
+                '② 进入仓库 Settings → Features → 勾选 Discussions<br>' +
+                '③ 刷新页面即可</p></div>';
+              document.getElementById('giscus-fallback').style.display = 'block';
+            }
+          }, 5000);
+        })();
+      </script>
+    </div>
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="../index.html">全部</a>
+      <a href="../tech.html">技术</a>
+      <a href="../cognition.html">认知</a>
+      <a href="../photography.html">摄影</a>
+      <a href="../about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p class="footer-sub">© 2025 思维碎片</p>
+  </footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/toc.js"></script>
+
+  <script>
+    // 主题切换时同步 Giscus
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      setTimeout(function() {
+        var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark_dimmed' : 'light';
+        var iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+          iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: theme } } },
+            'https://giscus.app'
+          );
+        }
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>

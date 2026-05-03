@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>技术 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="技术 · 思维碎片" />
+  <meta property="og:description" content="代码、系统与工程思维——记录技术学习路上的顿悟与踩坑。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/tech.html" />
+  <meta name="description" content="代码、系统与工程思维——记录技术学习路上的顿悟与踩坑。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="index.html">全部</a>
+        <a href="tech.html" class="active">技术</a>
+        <a href="cognition.html">认知</a>
+        <a href="photography.html">摄影</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="hero-sub">技术学习</p>
+      <h1>代码、系统<br/>与工程思维</h1>
+    </section>
+    <section class="posts">
+      <article class="post-card" onclick="location.href='posts/llm-thinking.html'">
+        <div class="post-meta"><span class="tag tech">技术</span><time>2025 · 01 · 18</time></div>
+        <h2>大模型时代，如何高效学习新技术</h2>
+        <p>在 LLM 触手可及的今天，学习新技术的范式已悄然转变……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+      <article class="post-card" onclick="location.href='posts/rust-ownership.html'">
+        <div class="post-meta"><span class="tag tech">技术</span><time>2024 · 12 · 28</time></div>
+        <h2>Rust 所有权系统：从混乱到顿悟</h2>
+        <p>学 Rust 三周，终于在某个深夜，突然理解了为什么借用检查器会拒绝那段代码……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+      <article class="post-card" onclick="location.href='posts/system-design.html'">
+        <div class="post-meta"><span class="tag tech">技术</span><time>2024 · 12 · 02</time></div>
+        <h2>系统设计笔记：从单体到分布式的思维转变</h2>
+        <p>系统设计不只是技术问题，更是权衡的艺术……</p>
+        <span class="read-more">阅读全文 →</span>
+      </article>
+    </section>
+  </main>
+  <footer><p>以文字为锚 · 用思考导航</p><p class="footer-sub">© 2025 思维碎片</p></footer>
+  <script src="js/theme.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    var cards = document.querySelectorAll('.post-card');
+    cards.forEach(function(card, i) {
+      setTimeout(function() {
+        card.classList.add('entered');
+      }, 80 + i * 90);
+    });
+  </script>
+</body>
+</html>

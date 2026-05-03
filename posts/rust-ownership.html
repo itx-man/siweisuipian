@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rust 所有权系统：从混乱到顿悟 · 思维碎片</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rust 所有权系统：从混乱到顿悟 · 思维碎片" />
+  <meta property="og:description" content="学 Rust 三周，终于在某个深夜理解了借用检查器。那一刻，脑海里某块拼图落定。" />
+  <meta property="og:url" content="https://si-wei-sui-pian.vercel.app/posts/rust-ownership.html" />
+  <meta name="description" content="学 Rust 三周，终于在某个深夜理解了借用检查器。那一刻，脑海里某块拼图落定。" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">思维碎片</a>
+      <div class="nav-links">
+        <a href="../index.html">全部</a>
+        <a href="../tech.html" class="active">技术</a>
+        <a href="../cognition.html">认知</a>
+        <a href="../photography.html">摄影</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><span class="sun">☀</span><span class="moon">◑</span></button>
+    </nav>
+  </header>
+  <main>
+    <a href="../index.html" class="back-link">← 返回</a>
+    <div class="article-header">
+      <div class="post-meta">
+        <span class="tag tech">技术</span>
+        <time>2024 · 12 · 28</time>
+      </div>
+      <h1>Rust 所有权系统：从混乱到顿悟</h1>
+    </div>
+    <div class="article-content">
+      <p>学 Rust 三周，终于在某个深夜，突然理解了为什么借用检查器会拒绝那段代码。那一刻，脑海里某块拼图落定，有一种奇特的愉悦感。</p>
+
+      <h2>编译器是在保护你</h2>
+      <p>大多数初学者（包括我）的第一反应是：Rust 的编译器太烦了。它不让我做任何事。</p>
+      <p>但当你真正理解所有权模型之后，你会意识到：编译器每一次拒绝你，都是在阻止一个在运行时会出现的真实 bug——数据竞争、悬空指针、双重释放。</p>
+
+      <h2>三条核心规则</h2>
+      <p>所有权系统建立在三条简单规则之上：</p>
+      <p>1. 每个值都有一个<strong>所有者</strong>。<br>2. 同一时间只能有一个所有者。<br>3. 所有者离开作用域时，值被自动释放。</p>
+      <p>听起来简单，但组合起来产生了巨大的复杂性。让我用一段让我卡了很久的代码来说明：</p>
+
+      <pre><code>fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1;          // s1 的所有权 移动 给了 s2
+    println!("{}", s1);   // ❌ 编译错误！s1 已失效
+}</code></pre>
+
+      <p>这在几乎所有其他语言里都是合法的。但 Rust 不允许，因为如果 <code>s1</code> 和 <code>s2</code> 都指向同一块内存，当它们都离开作用域时，内存会被释放两次——这就是「双重释放」漏洞。</p>
+
+      <h2>借用：临时的访问权</h2>
+      <p>当你不想转移所有权时，可以<strong>借用</strong>：</p>
+
+      <pre><code>fn print_length(s: &String) {  // 借用，不取走所有权
+    println!("长度: {}", s.len());
+}
+
+fn main() {
+    let s = String::from("hello");
+    print_length(&s);         // 传入引用
+    println!("{}", s);        // ✅ s 依然有效
+}</code></pre>
+
+      <h2>顿悟的那一刻</h2>
+      <p>顿悟来自于一个思维转变：把所有权不看作「限制」，而看作「资源管理协议」。当你开始用这个视角读 Rust 代码，你会发现每一处 <code>&</code>、<code>&mut</code>、<code>move</code> 都在清晰地声明：<em>谁负责这块数据的生命周期</em>。</p>
+      <p>这种明确性，在大型系统中，是无价的。</p>
+    </div>
+
+    <div class="comments-section">
+      <h3>评论</h3>
+      <div id="giscus-container">
+        <div id="giscus-fallback" style="text-align:center;padding:32px 0;">
+          <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载中…</p>
+        </div>
+      </div>
+      <script>
+        (function() {
+          var theme = localStorage.getItem('theme') === 'dark' ? 'dark_dimmed' : 'light';
+          var s = document.createElement('script');
+          s.src = 'https://giscus.app/client.js';
+          s.dataset.repo = 'itx-man/siweisuipian';
+          s.dataset.repoId = 'R_kgDOSTIv8g';
+          s.dataset.category = 'General';
+          s.dataset.categoryId = 'DIC_kwDOSTIv8s4C8P6P';
+          s.dataset.mapping = 'pathname';
+          s.dataset.strict = '0';
+          s.dataset.reactionsEnabled = '1';
+          s.dataset.emitMetadata = '0';
+          s.dataset.inputPosition = 'top';
+          s.dataset.theme = theme;
+          s.dataset.lang = 'zh-CN';
+          s.crossOrigin = 'anonymous';
+          s.async = false;
+          s.onload = function() {
+            var fb = document.getElementById('giscus-fallback');
+            if (fb) fb.style.display = 'none';
+          };
+          s.onerror = function() {
+            document.getElementById('giscus-fallback').innerHTML =
+              '<p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-3);">评论加载失败，请确认已安装 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>Giscus App</a> 并开启仓库 Discussions 功能</p>';
+          };
+          document.getElementById('giscus-container').appendChild(s);
+          // 5秒后仍未出现 iframe 则显示安装提示
+          setTimeout(function() {
+            if (!document.querySelector('iframe.giscus-frame')) {
+              document.getElementById('giscus-fallback').innerHTML =
+                '<div style="border:1px dashed var(--border);border-radius:4px;padding:24px 28px;text-align:center">' +
+                '<p style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-2);margin-bottom:12px">需完成以下步骤激活评论：</p>' +
+                '<p style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-3);line-height:2">' +
+                '① 访问 <a href=\'https://github.com/apps/giscus\' target=\'_blank\' style=\'color:var(--accent)\'>github.com/apps/giscus</a> 安装 App 到 itx-man/siweisuipian<br>' +
+                '② 进入仓库 Settings → Features → 勾选 Discussions<br>' +
+                '③ 刷新页面即可</p></div>';
+              document.getElementById('giscus-fallback').style.display = 'block';
+            }
+          }, 5000);
+        })();
+      </script>
+    </div>
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="../index.html">全部</a>
+      <a href="../tech.html">技术</a>
+      <a href="../cognition.html">认知</a>
+      <a href="../photography.html">摄影</a>
+      <a href="../about.html">关于</a>
+    </nav>
+    <p>以文字为锚 · 用思考导航</p>
+    <p class="footer-sub">© 2025 思维碎片</p>
+  </footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/toc.js"></script>
+
+  <script>
+    // 主题切换时同步 Giscus
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      setTimeout(function() {
+        var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark_dimmed' : 'light';
+        var iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+          iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: theme } } },
+            'https://giscus.app'
+          );
+        }
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
