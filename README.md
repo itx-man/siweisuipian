@@ -91,4 +91,4 @@ git commit -m "post: 文章标题 / fix: 修复说明"
 git push
 ```
 
-© 2025 思维碎片
+© 2026 思维碎片
