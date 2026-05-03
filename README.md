@@ -4,7 +4,7 @@
 
 🔗 **线上地址**：[si-wei-sui-pian.vercel.app](https://si-wei-sui-pian.vercel.app)
 
-_自动部署验证：2026-05-03_
+_自动部署验证：2026-05-03（二次校验）_
 
 ---
 
